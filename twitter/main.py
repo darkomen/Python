@@ -7,13 +7,13 @@ from lcd import *
 # of authenticating with Twitter.
 # The consumer keys can be found on your application's Details
 # page located at https://dev.twitter.com/apps (under "OAuth settings")
-consumer_key='PeENU8zqi5tzgPH8b7iiA'
-consumer_secret='yzPmYMlsLjWUq5UCTqv3W6zBdA95Q9pXy7Zq5incgo'
+consumer_key=''
+consumer_secret=''
 # The access tokens can be found on your applications's Details
 # page located at https://dev.twitter.com/apps (located
 # under "Your access token")
-access_token='1251416798-z2ppkcla7oCmN2yNO1rnLwTrUKtBBXsFQPJgxu7'
-access_token_secret='zsEcp9DBwzmU3K6Aq0JDVj8KUnAroH1HfJzg7Fu2BU'
+access_token=''
+access_token_secret=''
 
 # Connection to twitter
 init(CONTRAST)
