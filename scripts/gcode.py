@@ -23,7 +23,8 @@ f_gcode = args["gcode"]
 # Variable con el nombre del fichero destino
 f_gcode2 = str(args["temp"]) + str(args["gcode"])
 # Comando a reemplazar
-command = "M109 S{0} ;Uncomment to add your own temperature line".format(args["temp"])
+command = "M109 S{0} ;Uncomment to add your own temperature line".format(args[
+                                                                         "temp"])
 
 
 # Abrimos el fichero origen como lectura
@@ -32,8 +33,10 @@ f1 = open(f_gcode, 'r')
 f2 = open(f_gcode2, 'w')
 # Por cada linea en el fichero de origen
 for line in f1:
-    # Escribimos en el fichero de destino y reemplazamos la linea con el comando de la cama caliente
-    f2.write(line.replace(';M190 S70 ;Uncomment to add your own bed temperature line', command))
+    # Escribimos en el fichero de destino y reemplazamos la linea con el
+    # comando de la cama caliente
+    f2.write(line.replace(
+        ';M190 S70 ;Uncomment to add your own bed temperature line', command))
 # Cerramos ambos ficheros
 f1.close()
 f2.close()

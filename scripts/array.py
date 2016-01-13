@@ -9,6 +9,6 @@ cuantos = 20
 separacion = 1
 
 for i in range(cuantos):
-    strs = strs+"{}".format(inicio+(i*separacion))+","
+    strs = strs + "{}".format(inicio + (i * separacion)) + ","
 
-print(strs[:-1]+"};")
+print(strs[:-1] + "};")
