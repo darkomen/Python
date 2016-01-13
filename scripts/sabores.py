@@ -35,4 +35,5 @@ else:
 
 print("Número de pizzas a pedir: ", pizzas)
 for i in range(pizzas):
-    print(carta[int(random.random() * len(carta))])
+    #print(carta[int(random.random() * len(carta))])
+    print(carta.pop(int(random.random() * len(carta))))
