@@ -4,7 +4,7 @@ import random
 from math import ceil
 
 vadepizza = ['Cuatro Quesos', 'Fondue', 'Vegetal', 'Picante', 'Chicken Fondue',
-             'Hawaiana', 'Boloñesa', 'Mediterranea', 'Granjera', 'Piamontesa',
+             'Hawaiana', 'Boloñesa', 'Mediterranea', 'Piamontesa',
              'Carbonara', 'House', 'Barbacoa', 'Barbacoa Cremosa', 'Barbacoa House',
              'Barbacoa Kebab', 'Chicago', 'Bolognesa cremosa', 'Mar y Montaña']
 
