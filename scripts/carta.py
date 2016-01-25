@@ -49,7 +49,11 @@ precio = primary[0].find_all('div',class_='menu-item__variation__price ')
 #links = primary[0].find_all('div',class_='menu-item__variation__price ')
 #for i, elements in enumerate(links):
 #	print((elements.get_text()))	
-menus = [elements.get('title') for elements in links ]
-precios =[elements.get_text().split('\n') for elements in precio]
+ofertas = [elements.get('title') for elements in links ]
+precios =[elements.get_text().replace('€','').replace('\n','').replace(' ','') for elements in precio]
+kk = dict(zip(ofertas,precios))
+print(kk)
+"""
 for i in range(len(precios)):
-	print("{}: {}".format(menus[i],precios[i][1].replace(' ','')))
+	print("{}: {}".format(ofertas[i],precios[i][1].replace(' ','')))
+"""
