@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 
 with urllib.request.urlopen("http://www.sslproxies.org/") as url:
     s = url.read()
-bs = BeautifulSoup(s)
+bs = BeautifulSoup(s,'lxml')
 table = bs.find('table', {'class': 'display fpltable', 'id': 'proxylisttable'})
 rows = table.find_all('tr')
 results = []
