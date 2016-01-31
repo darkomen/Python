@@ -1,7 +1,26 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
+
 import random
 from math import ceil
+
+class pypizza():
+	def __init__(selft):
+		self.__restaurante
+		self.__
+		pass
+	def setcomensales(selft):
+		pass
+	def getcomensales(selft):
+		pass
+	def setmenus(selft):
+		pass
+	def getmenus(selft):
+		pass
+	def setrestaurantes(selft):
+		pass
+	def getsabores(selft):
+		pass
 
 vadepizza = ['Cuatro Quesos', 'Fondue', 'Vegetal', 'Picante', 'Chicken Fondue',
              'Hawaiana', 'Boloñesa', 'Mediterranea', 'Piamontesa',
