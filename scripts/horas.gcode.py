@@ -43,7 +43,6 @@ class estimate():
 			for i in range(2):
 				self.__time[i] = self.__time[i] + int(dic[i])
 
-
 	def gettime(self):
 		return self.__time
 

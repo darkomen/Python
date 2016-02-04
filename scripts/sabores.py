@@ -5,8 +5,8 @@ from math import ceil
 
 vadepizza = ['Cuatro Quesos', 'Fondue', 'Vegetal', 'Picante', 'Chicken Fondue',
              'Hawaiana', 'Boloñesa', 'Mediterranea', 'Piamontesa',
-             'Carbonara', 'House', 'Barbacoa', 'Barbacoa Cremosa', 'Barbacoa House',
-             'Barbacoa Kebab', 'Chicago', 'Bolognesa cremosa', 'Mar y Montaña']
+             'Carbonara con cebolla','Carbonara con queso', 'House', 'Barbacoa', 'Barbacoa Cremosa', 'Barbacoa House',
+             'Barbacoa Kebab', 'Chicago con maiz', 'Chicago con cheddar', 'Bolognesa cremosa', 'Mar y Montaña']
 
 dicarlo = ['Especiale Carlos', 'Cabrini', 'Diabola', 'Barbacue Carlos', 'Supremazia',
            'Bambino', 'Quattro Formaggio', 'Vegetale', 'Bolognesa', 'Carbonata',
