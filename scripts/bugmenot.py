@@ -13,4 +13,4 @@ print(response)
 soup = BeautifulSoup(response.content, 'html.parser')
 names = soup.select('article.account dl kbd')
 
-print((names.text))
+print((names))
