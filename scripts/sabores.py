@@ -24,12 +24,15 @@ class pypizza():
 
 vadepizza = ['Cuatro Quesos', 'Fondue', 'Vegetal', 'Picante', 'Chicken Fondue',
              'Hawaiana', 'Boloñesa', 'Mediterranea', 'Piamontesa',
-             'Carbonara con cebolla','Carbonara con queso', 'House', 'Barbacoa', 'Barbacoa Cremosa', 'Barbacoa House',
-             'Barbacoa Kebab', 'Chicago con maiz', 'Chicago con cheddar', 'Bolognesa cremosa', 'Mar y Montaña']
+             'Carbonara con cebolla', 'Carbonara con queso', 'House',
+             'Barbacoa', 'Barbacoa Cremosa', 'Barbacoa House',
+             'Barbacoa Kebab', 'Chicago con maiz', 'Chicago con cheddar',
+             'Bolognesa cremosa', 'Mar y Montaña']
 
-dicarlo = ['Especiale Carlos', 'Cabrini', 'Diabola', 'Barbacue Carlos', 'Supremazia',
-           'Bambino', 'Quattro Formaggio', 'Vegetale', 'Bolognesa', 'Carbonata',
-           'Tropicale', 'Granjera', 'Quattro Stagione']
+dicarlo = ['Especiale Carlos', 'Cabrini', 'Diabola', 'Barbacue Carlos',
+           'Supremazia', 'Bambino', 'Quattro Formaggio', 'Vegetale',
+           'Bolognesa', 'Carbonata', 'Tropicale', 'Granjera',
+           'Quattro Stagione']
 
 print("¿Donde quieres comer hoy?")
 print("1. Va De pizza")
@@ -54,5 +57,5 @@ else:
 
 print("Número de pizzas a pedir: ", pizzas)
 for i in range(pizzas):
-    #print(carta[int(random.random() * len(carta))])
+    # print(carta[int(random.random() * len(carta))])
     print(carta.pop(int(random.random() * len(carta))))

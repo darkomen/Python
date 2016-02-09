@@ -24,7 +24,7 @@ f_gcode = args["gcode"]
 f_gcode2 = str(args["temp"]) + str(args["gcode"])
 # Comando a reemplazar
 command = "M109 S{0} ;Uncomment to add your own temperature line".format(args[
-                                                                         "temp"])
+            "temp"])
 
 
 # Abrimos el fichero origen como lectura

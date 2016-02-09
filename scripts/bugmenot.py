@@ -6,7 +6,7 @@ import requests
 import random
 from bs4 import BeautifulSoup
 
-url =  'http://bugmenot.com/view/123dapp.com'
+url = 'http://bugmenot.com/view/123dapp.com'
 
 response = requests.get(url)
 print(response)
