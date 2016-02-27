@@ -3,70 +3,58 @@
 
 import requests
 from bs4 import BeautifulSoup
+url_menus={
+    'carlos' : 'http://pizzeriascarlos.com/nuestracarta.html',
+    'telepizza' : 'http://www.telepizza.es/productos/pizzas',
+    'vadepizza' : 'https://www.just-eat.es/restaurants-vadepizzarivas/menu',
+    'hungrys' : 'http://www.hungrys.co/pizzas.html'}
+    
+carta_carlos = []
+carta_telepizza = []
+carta_vadepizza = []
+carta_hungrys = []
+def get_soup(url):
+    response = requests.get(url)
+    if response.status_code == 200:
+        soup = BeautifulSoup(response.content, 'lxml')
+        return soup
+    else:
+        return False
 
-url = 'http://pizzeriascarlos.com/nuestracarta.html'
-response = requests.get(url)
-soup = BeautifulSoup(response.content, 'lxml')
-links = soup.select('div a[href^=indexpizza_files]')
-for link in links:
-    name = [link['title'] for link in links]
-    ingredients = [link.text[len(name[i])+2:] for i, link in enumerate(links)]
+def get_pizzas():
+    global carta_carlos
+    global carta_telepizza
+    global carta_vadepizza
+    global carta_hungrys
+    # obteniendo menus de Di Carlo
+    carlos = get_soup(url_menus['carlos'])
+    pizzas = carlos.select('div a[href^=indexpizza_files]')
+    carta_carlos = [pizza['title'] for pizza in pizzas]
 
-pizzas = dict(zip(name, ingredients))
-print(pizzas['Granjera'])
+    # obteniendo menus de Telepizza
+    telepizza = get_soup(url_menus['telepizza'])
+    pizzas = telepizza.select('div a[class^=styleTitle]')
+    carta_telepizza = [pizza.get_text() for pizza in pizzas]
 
-"""
-with urllib.request.urlopen(
-    "http://pizzeriascarlos.com/nuestracarta.html") as url:
-    s = url.read()
-bs = BeautifulSoup(s,'lxml')
+    # obteniendo menus de Hungrys
+    hungrys = get_soup(url_menus['hungrys'])
+    pizzas = hungrys.select('div.col-md-12 span[class^=thumb-info-inner]')
+    carta_hungrys = [pizza.get_text() for pizza in pizzas]
 
-primary = bs.find_all('div', class_='content group three')
-links = primary[0].find_all('a',class_='vlightbox1')
-for i, elements in enumerate(links):
-    print((elements.get('title')))
+    # obteniendo menus de Vadepizza
+    vadepizza = get_soup(url_menus['vadepizza'])
+    pizzas = vadepizza.select('h4.product-title')
+    pizza = [pizza.get_text().strip() for pizza in pizzas]
+    for i,element  in enumerate(pizza):
+        if (element.startswith('Pizza')):
+            carta_vadepizza.append(element)
 
-"""
-"""
-# Telepizza
-with urllib.request.urlopen("http://www.telepizza.es/productos/pizzas") as url:
-    s = url.read()
-bs = BeautifulSoup(s,'lxml')
-
-primary = bs.find_all('div',
-                      class_='content_with_highlighted_sidebar wrapper row')
-#mod_product_list
-#content_with_highlighted_sidebar wrapper row
-links = primary[0].find_all('img',class_='productImage')
-for i, elements in enumerate(links):
-    print((elements.get('title')))
-
-
-"""
-# Vadepizza
-"""
-from urllib.request import Request, urlopen
-
-req = Request('https://www.laneveraroja.com/restaurant/n9mu/vadepizza-rivas-centro', headers={'User-Agent': 'Mozilla/5.0'})
-webpage = urlopen(req).read()
-bs = BeautifulSoup(webpage,'lxml')
-
-primary = bs.find_all('article', class_='menu__category')
-#print(primary)
-#mod_product_list
-#content_with_highlighted_sidebar wrapper row
-links = primary[0].find_all('div',class_='menu-item__title')
-precio = primary[0].find_all('div',class_='menu-item__variation__price ')
-#for i, elements in enumerate(links), enumerate(precio):
-#	print((elements.get('title')))
-#links = primary[0].find_all('div',class_='menu-item__variation__price ')
-#for i, elements in enumerate(links):
-#	print((elements.get_text()))
-ofertas = [elements.get('title') for elements in links ]
-precios =[elements.get_text().replace('€','').replace('\n','').replace(' ','') for elements in precio]
-kk = dict(zip(ofertas,precios))
-print(kk)
-
-for i in range(len(precios)):
-    print("{}: {}".format(ofertas[i],precios[i][1].replace(' ','')))
-"""
+get_pizzas()
+print("Carta Carlos")
+print(carta_carlos)
+print("Carta Telepizza")
+print(carta_telepizza)
+print("Carta Vadepizza")
+print(carta_vadepizza)
+print("Carta Hungrys")
+print(carta_hungrys)
