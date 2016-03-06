@@ -28,10 +28,7 @@ class strip():
             return False
 
     def check_file(self, file):
-        if os.path.exists(file):
-            return True
-        else:
-            return False
+        return os.path.exists(file):
 
     def main(self):
         self.__start_time = time.time()
@@ -62,8 +59,8 @@ class strip():
                 print("Se ha producido un error al acceder a la tira")
                 pass
 
-        __end_time = time.time()
-        __elapsed_time = __end_time - __start_time
+        self.__end_time = time.time()
+        self.__elapsed_time = self.__end_time - self.__start_time
         print("Descargadas un total de {} tiras de {} en {} s".format(self.__count, self.__home, self.__end_time))
 
 if __name__ == '__main__':
