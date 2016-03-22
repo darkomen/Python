@@ -7,6 +7,7 @@ import os
 import time
 from bs4 import BeautifulSoup
 
+
 class strip():
     def __init__(self):
         self.__count = 0
@@ -28,7 +29,7 @@ class strip():
             return False
 
     def check_file(self, file):
-        return os.path.exists(file):
+        return os.path.exists(file)
 
     def main(self):
         self.__start_time = time.time()
@@ -41,10 +42,9 @@ class strip():
             soup = self.get_soup(strip_url)
             div_img = soup.find('div', id='comic')
             img = div_img.find('img')
-
             try:
                 link_img = "http:" + img['src']
-                file_img = self.__folder + str(img['alt']).replace(' ','') + '.png'
+                file_img = self.__folder + str(img['alt']).replace(' ', '') + '.png'
                 if self.check_file(file_img):
                     print("fichero existe")
                     pass
