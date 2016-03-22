@@ -8,7 +8,7 @@ url_menus={
     'telepizza' : 'http://www.telepizza.es/productos/pizzas',
     'vadepizza' : 'https://www.just-eat.es/restaurants-vadepizzarivas/menu',
     'hungrys' : 'http://www.hungrys.co/pizzas.html'}
-    
+
 carta_carlos = []
 carta_telepizza = []
 carta_vadepizza = []
@@ -16,7 +16,7 @@ carta_hungrys = []
 def get_soup(url):
     response = requests.get(url)
     if response.status_code == 200:
-        soup = BeautifulSoup(response.content, 'lxml')
+        soup = BeautifulSoup(response.content, 'html')
         return soup
     else:
         return False
